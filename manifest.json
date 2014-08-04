@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Wikispeedia",
+  "description": "This extension makes navigating Wikipedia less of a ball-ache",
+  "version": "1.0",
+
+  "permissions": [
+    "http://*.wikipedia.org/"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["http://*.wikipedia.org/*"],
+      "css": ["styles.css"],
+      "js": ["jquery.js", "scripts.js"]
+    }
+  ]
+}

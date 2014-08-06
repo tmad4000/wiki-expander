@@ -11,9 +11,12 @@ getArticle = function(url, done) {
     url: url
   }).done(function(result) {
     var left, paragraph, right;
-    left = result.indexOf("<p>");
-    right = result.indexOf("</p>");
-    paragraph = result.slice(left, right + 4);
+    h = $(result);
+
+    //  left = result.indexOf("<p>");
+    //  right = result.indexOf("</p>");
+    //  paragraph = result.slice(left, right + 4);
+    paragraph = h.find("#mw-content-text > p").first().html();
     return done(paragraph);
   });
 };
